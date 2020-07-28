@@ -1,7 +1,11 @@
 <h2>All the todos!</h2>
 
+<h5><a href="/todos/new">Create a new todo</a></h5>
+<br>
 <ul>
     <% @todos.each do |todo| %>
-        <li><a href="/todos/<%= todo.id %>"><%= todo.item %></a></li>
+        <li>
+            <span class="<%= todo.completed ? "completed" : "required" %>"><a href="/todos/<%= todo.id %>"><%= todo.item %></a></span>
+        </li>
     <% end %>
 </ul>

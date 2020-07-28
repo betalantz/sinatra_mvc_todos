@@ -2,3 +2,6 @@
 
 <h3><%= @todo.item %> </h3>
 <h4><%= @todo.completed ? "Complete" : "Not Complete"%></h4>
+
+<a href="/todos/<%= @todo.id %>/edit">Edit</a>
+<a href="/todos">Back</a>

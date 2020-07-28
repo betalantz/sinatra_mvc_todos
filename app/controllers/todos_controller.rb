@@ -4,10 +4,37 @@ class TodosController < ApplicationController
         @todos = Todo.all
         erb :'todos/index'
     end
+    
+    get '/todos/new' do
+        erb :'todos/new'
+    end
 
     get '/todos/:id' do
         @todo = Todo.find_by(id: params[:id])
         erb :'todos/show'
     end
+
+    post '/todos' do
+        Todo.create(item: params[:item])
+        redirect '/todos'
+    end
+
+    get "/todos/:id/edit" do
+        @todo = Todo.find_by(id: params[:id])
+        erb :'todos/edit'
+    end
+
+    patch '/todos/:id' do
+        todo = Todo.find_by(id: params[:id])
+        todo.update(item: params[:item], completed: !!params[:completed])
+        redirect '/todos'
+    end
+
+    delete '/todos/:id' do
+        todo = Todo.find_by(id: params[:id])
+        todo.destroy
+        redirect '/todos'
+    end
+
 
 end

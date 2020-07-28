@@ -81,6 +81,16 @@
     margin-top: 20px;
     padding-top: 20px;
   }
+  
+  .completed a{
+    color: red;
+    text-decoration: line-through;
+  }
+
+  .required a {
+    color: green;
+  }
+
 }
 
 @media screen and (max-width: 600px) {
@@ -112,4 +122,16 @@
     font-size: 18px;
     line-height: 24px;
   }
+
+  .completed a{
+    color: red;
+    text-decoration: line-through;
+  }
+
+  .required a {
+    color: green;
+  }
+
+  
+  
 }
